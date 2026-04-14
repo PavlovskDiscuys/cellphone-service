@@ -3,12 +3,12 @@ package com.pluralsight;
 public class CellPhone {
     private int serialNumber;
     private String model;
-    public String carrier;
-    public int phoneNumber;
+    private String carrier;
+    private String phoneNumber;
     private String owner;
 
 
-    // Getter
+    //Getter
     public int getSerialNumber() {
         return serialNumber;
     }
@@ -21,7 +21,7 @@ public class CellPhone {
         return carrier;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -29,8 +29,7 @@ public class CellPhone {
         return owner;
     }
 
-
-    // Setter
+    //Setter
     public void setSerialNumber(int serialNumber) {
         this.serialNumber = serialNumber;
     }
@@ -43,7 +42,7 @@ public class CellPhone {
         this.carrier = carrier;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -51,3 +50,4 @@ public class CellPhone {
         this.owner = owner;
     }
 }
+
