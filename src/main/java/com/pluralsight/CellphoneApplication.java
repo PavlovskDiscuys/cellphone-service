@@ -20,12 +20,23 @@ public class CellphoneApplication {
 
         //------------------------------------------------------------------------------------
 
-
-
         // - Model (ex: iPhone 17)
         cellPhone.setModel("Samsung Galaxy 26 Ultra");
         System.out.println("Current model: " + cellPhone.getModel());
 
+        //-- Ask if they changed their phone
+        System.out.println("Do you have a new phone (y/n)?: ");
+        String modelAnswer = input.nextLine().trim().toLowerCase();
+
+        if (modelAnswer.equals("y") || modelAnswer.equals("yes")) {
+            System.out.println("Model unchanged " + cellPhone.getModel());
+        }  else {
+            // --- Ask for new model
+            System.out.println("Enter your new model: ");
+            String newModel = input.nextLine().trim();
+            cellPhone.setModel(newModel);
+            System.out.println("Model has been updated to: " + cellPhone.getModel());
+        }
 
         //------------------------------------------------------------------------------------
 
