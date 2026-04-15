@@ -17,6 +17,20 @@ public class CellphoneApplication {
         cellPhone.setSerialNumber(1234567);
         System.out.println("Current Serial number: " + cellPhone.getSerialNumber());
 
+        //-- Ask if they changed their serial number
+        System.out.print("Do you have a new serial number (y/n)?: ");
+        String serialNumberAnswer = input.nextLine().trim().toLowerCase();
+
+        if (serialNumberAnswer.equals("y") || serialNumberAnswer.equals("yes")) {
+            System.out.print("Enter new serial number: ");
+            int newSerialNumber = input.nextInt();
+            input.nextLine();
+            cellPhone.setSerialNumber(newSerialNumber);
+            System.out.println("serial number has been changed to: " + cellPhone.getSerialNumber());
+        } else {
+            System.out.println("serial number unchanged: " + cellPhone.getSerialNumber());
+        }
+
 
         //------------------------------------------------------------------------------------
 
@@ -24,19 +38,21 @@ public class CellphoneApplication {
         cellPhone.setModel("Samsung Galaxy 26 Ultra");
         System.out.println("Current model: " + cellPhone.getModel());
 
-        //-- Ask if they changed their phone
-        System.out.println("Do you have a new phone (y/n)?: ");
+        // -- Ask if they changed their phone
+        System.out.print("Did you change your phone (y/n)?: ");
         String modelAnswer = input.nextLine().trim().toLowerCase();
 
         if (modelAnswer.equals("y") || modelAnswer.equals("yes")) {
-            System.out.println("Model unchanged " + cellPhone.getModel());
-        }  else {
-            // --- Ask for new model
-            System.out.println("Enter your new model: ");
+            // user said yes --> ask for the new model
+            System.out.print("Enter your new model: ");
             String newModel = input.nextLine().trim();
             cellPhone.setModel(newModel);
             System.out.println("Model has been updated to: " + cellPhone.getModel());
+        } else {
+            // user said no --> keep current
+            System.out.println("Model unchanged: " + cellPhone.getModel());
         }
+
 
         //------------------------------------------------------------------------------------
 
