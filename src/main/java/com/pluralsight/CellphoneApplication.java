@@ -8,18 +8,48 @@ public class CellphoneApplication {
         Scanner input = new Scanner(System.in);
         CellPhone cellPhone = new CellPhone();
 
+
+        //------------------------------------------------------------------------------------
+
+
+
         // - Serial Number (ex: 1000000 - 9999999)
         cellPhone.setSerialNumber(1234567);
-        System.out.println("Current Serial number: ");
+        System.out.println("Current Serial number: " + cellPhone.getSerialNumber());
+
+
+        //------------------------------------------------------------------------------------
+
+
 
         // - Model (ex: iPhone 17)
         cellPhone.setModel("Samsung Galaxy 26 Ultra");
         System.out.println("Current model: " + cellPhone.getModel());
 
+
+        //------------------------------------------------------------------------------------
+
+
         // - Carrier (ex: AT&T)
         cellPhone.setCarrier("AT&T");
         System.out.println("Current carrier: " + cellPhone.getCarrier());
 
+        // -- Ask if they want to change their carrier
+        System.out.println("keep current carrier (y/n): ");
+        String carrierAnswer = input.nextLine().trim().toLowerCase();
+
+        if (carrierAnswer.equals("y") || carrierAnswer.equals("yes")) {
+            System.out.println("Carrier unchanged " + cellPhone.getCarrier());
+        }  else {
+            // -- Ask for new carrier
+            System.out.println("Enter new carrier: ");
+            String newCarrier = input.nextLine().trim();
+            cellPhone.setCarrier(newCarrier);
+            System.out.println("Carrier has been updated to: " + cellPhone.getCarrier());
+        }
+
+
+        //------------------------------------------------------------------------------------
 
 
         // - Phone Number (ex: 800-555-5555)
@@ -39,6 +69,9 @@ public class CellphoneApplication {
             cellPhone.setPhoneNumber(newNumber);
             System.out.println("Phone number has been updated to: " + cellPhone.getPhoneNumber());
         }
+
+
+        //------------------------------------------------------------------------------------
 
 
         // - Owner (ex:Dana Wyatt)
